@@ -3,7 +3,6 @@
 A modern, full-stack AI-powered relationship advice chatbot that provides thoughtful, empathetic guidance for modern dating challenges, situationships, and relationship concerns.
 
 ![Status](https://img.shields.io/badge/status-ready-success)
-![License](https://img.shields.io/badge/license-MIT-blue)
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![React](https://img.shields.io/badge/react-18-blue)
 
