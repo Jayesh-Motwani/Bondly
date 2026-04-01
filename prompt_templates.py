@@ -48,7 +48,6 @@ RELATIONSHIP_ADVICE_RAG_TEMPLATE = """You are a compassionate, wise, and non-jud
     Your Response:"""
 
 # SITUATIONSHIP-SPECIFIC TEMPLATE
-# Specifically designed for situationship-related queries
 
 SITUATIONSHIP_ADVICE_TEMPLATE = """You are a modern dating expert who understands the complexities of situationships - those undefined, ambiguous romantic connections that are common today.
 

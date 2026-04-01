@@ -3,38 +3,11 @@ Relationship Advice Extraction Pipeline
 This module extracts relationship advice content from free online sources.
 All sources are free - no paid APIs required.
 
-DELIVERABLES:
+RETURNS:
 1. List of Document objects containing:
    - page_content: The extracted text from each source
    - metadata: Dictionary with source URL, title, and other info
 
-HOW TO USE IN INGESTION PIPELINE:
-from extraction_pipeline import extract_relationship_advice
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
-
-# 1. Extract content
-documents = extract_relationship_advice()
-
-# 2. Split into chunks
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-splits = text_splitter.split_documents(documents)
-
-# 3. Create embeddings and vectorstore
-embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-vectorstore = Chroma.from_documents(documents=splits, embedding=embeddings)
-
-HOW TO USE IN QUERY PIPELINE:
-from langchain_community.vectorstores import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
-
-# Load existing vectorstore
-embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-vectorstore = Chroma(persist_directory="./chroma_db", embedding_function=embeddings)
-
-# Perform similarity search
-results = vectorstore.similarity_search("How to deal with mixed signals?", k=3)
 """
 
 import os
