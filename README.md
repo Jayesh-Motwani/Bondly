@@ -1,9 +1,8 @@
-# LoveGuru 💜 - AI Relationship Advice Assistant
+# Bondly - AI Relationship Advice Assistant
 
 A modern, full-stack AI-powered relationship advice chatbot that provides thoughtful, empathetic guidance for modern dating challenges, situationships, and relationship concerns.
 
 ![Status](https://img.shields.io/badge/status-ready-success)
-![License](https://img.shields.io/badge/license-MIT-blue)
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![React](https://img.shields.io/badge/react-18-blue)
 
@@ -30,8 +29,8 @@ A modern, full-stack AI-powered relationship advice chatbot that provides though
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/loveguru.git
-cd loveguru
+git clone https://github.com/Jayesh-Motwani/Bondly
+cd Bondly
 ```
 
 ### 2. Set Up Backend
@@ -96,13 +95,12 @@ Navigate to **http://localhost:3000** in your browser.
 ## Project Structure
 
 ```
-loveguru/
+Bondly/
 ├── app.py                      # FastAPI backend server
 ├── love_guru.py                # Main RAG pipeline and query logic
 ├── extraction_pipeline.py      # Web scraping and content extraction
 ├── prompt_templates.py         # LLM prompt templates
 ├── requirements.txt            # Python dependencies
-├── .env                        # Environment variables (API keys)
 ├── .gitignore                  # Git ignore rules
 ├── chroma_db/                  # Vector database (auto-generated)
 │
@@ -129,9 +127,9 @@ loveguru/
 ### Backend Pipeline
 
 ```
-User Query → Intent Classification → Vector Search → LLM Response
-                                      ↓
-                            ChromaDB (Embeddings)
+User Query → Intent Classification (Situationship or Relationship) → Vector Search → LLM Response
+                                                                          ↓
+                                                                    ChromaDB (Embeddings)
 ```
 
 1. **Intent Classification**: Categorizes query as situationship or relationship advice
@@ -142,7 +140,7 @@ User Query → Intent Classification → Vector Search → LLM Response
 
 | Component | Technology | Why |
 |-----------|------------|-----|
-| **LLM** | Google Gemini 2.0 Flash | Best free tier (15 RPM, 1M TPM) |
+| **LLM** | Google Gemini 3.0 Flash | Best free tier (15 RPM, 1M TPM) |
 | **Embeddings** | Sentence Transformers | Local, free, multilingual |
 | **Vector DB** | ChromaDB | Lightweight, persistent storage |
 | **Backend** | FastAPI | Fast, async, easy to deploy |
@@ -194,7 +192,7 @@ Health check endpoint.
 Edit `love_guru.py`:
 
 ```python
-LLM_MODEL = "gemini-2.0-flash-exp"  # or other Gemini models
+LLM_MODEL = "gemini-3.0-flash-exp"  # or other Gemini models
 ```
 
 ### Customizing Prompts
@@ -239,34 +237,6 @@ USER_AGENT=Mozilla/5.0 (Windows NT 10.0; Win64; x64)
 
 ---
 
-## Development
-
-### Running Tests
-
-```bash
-# Backend tests (if added)
-pytest
-
-# Frontend tests (if added)
-cd frontend
-npm test
-```
-
-### Code Style
-
-```bash
-# Python linting
-pip install black flake8
-black .
-flake8 .
-
-# Frontend linting
-cd frontend
-npm run lint
-```
-
----
-
 ## Troubleshooting
 
 ### "API key not valid" Error
@@ -274,26 +244,6 @@ npm run lint
 1. Get a new key from https://aistudio.google.com/app/apikey
 2. Update `.env` file
 3. Restart the backend
-
-### "Module not found" Error
-
-```bash
-# Reinstall Python dependencies
-pip install -r requirements.txt --force-reinstall
-
-# Reinstall Node dependencies
-cd frontend
-rm -rf node_modules package-lock.json
-npm install
-```
-
-### ChromaDB Errors
-
-Delete the vector database and let it regenerate:
-
-```bash
-rm -rf chroma_db/
-```
 
 ### Frontend Can't Connect to Backend
 
@@ -333,13 +283,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
 
 ## Disclaimer
@@ -353,23 +296,7 @@ This AI chatbot provides general relationship advice and should not replace prof
 
 ---
 
-## Acknowledgments
-
-- Google Gemini for the free LLM tier
-- LangChain for the RAG framework
-- ChromaDB for vector storage
-- HuggingFace for embeddings
-- All relationship advice sources that make this possible
-
----
-
-## Contact
-
 Made with 💜 for anyone navigating modern relationships.
-
-**GitHub**: [@yourusername](https://github.com/yourusername)
-
-**Project Link**: https://github.com/yourusername/loveguru
 
 ---
 
